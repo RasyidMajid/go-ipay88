@@ -1,0 +1,24 @@
+{{define "index.html"}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>iPay88 Indonesia</title>
+
+</head>
+
+<body>
+<div>
+    <form method="POST" name="redirect" action="{{ .RedirectUrl }}">
+        <input type="hidden" name="CheckoutID" value="{{ .CheckoutID }}" />
+        <input type="hidden" name="Signature" value="{{ .Signature }}" />
+    </form>
+    <script language=javascript>
+        document.redirect.submit();
+    </script>
+</div>
+</body>
+
+</html>
+{{end}}
