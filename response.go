@@ -1,6 +1,6 @@
 package go_ipay88
 
-type ResponseGatewayV2 struct {
+type Response struct {
 	RefNo      string `json:"RefNo"`
 	Signature  string `json:"Signature"`
 	CheckoutID string `json:"CheckoutID"`

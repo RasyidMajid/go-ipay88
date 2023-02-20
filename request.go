@@ -1,6 +1,6 @@
 package go_ipay88
 
-type RequestGatewayV2 struct {
+type Request struct {
 	APIVersion       string             `json:"ApiVersion"`
 	PaymentID        string             `json:"PaymentId"`
 	Currency         string             `json:"Currency"`

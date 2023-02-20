@@ -15,7 +15,7 @@ func NewGatewayIPay88(client Client) *GatewayIPay88 {
 	return &GatewayIPay88{client: client}
 }
 
-func (g *GatewayIPay88) PaymentRequest(request *RequestGatewayV2) (*ResponseGatewayV2, error) {
+func (g *GatewayIPay88) PaymentRequest(request *Request) (*Response, error) {
 
 	signature := GetSignatureV2(GetSignatureV2Request{
 		MerchantKey:  g.client.MerchantKey,
@@ -26,7 +26,7 @@ func (g *GatewayIPay88) PaymentRequest(request *RequestGatewayV2) (*ResponseGate
 	})
 	request.Signature = signature
 
-	var res *ResponseGatewayV2
+	var res *Response
 	var url = g.client.Env.String() + "/ePayment/WebService/PaymentAPI/Checkout"
 	err := g.client.DoProses(http.MethodPost, url, request, &res)
 	if err != nil {
