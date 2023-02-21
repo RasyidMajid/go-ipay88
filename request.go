@@ -2,6 +2,7 @@ package go_ipay88
 
 type Request struct {
 	APIVersion       string             `json:"ApiVersion"`
+	MerchantCode     string             `json:"MerchantCode"`
 	PaymentID        string             `json:"PaymentId"`
 	Currency         string             `json:"Currency"`
 	RefNo            string             `json:"RefNo"`
