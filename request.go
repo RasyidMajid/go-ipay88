@@ -88,6 +88,37 @@ type GetSignatureV2Request struct {
 }
 
 type PaymentStatusRequest struct {
-	RefNo  string
-	Amount string
+	RefNo  string `json:"refno"`
+	Amount string `json:"amount"`
+}
+
+type NotificationRequest struct {
+	MerchantCode       string `json:"MerchantCode"`
+	PaymentId          string `json:"PaymentId"`
+	RefNo              string `json:"RefNo"`
+	Amount             string `json:"Amount"`
+	Currency           string `json:"Currency"`
+	Remark             string `json:"Remark"`
+	TransId            string `json:"TransId"`
+	AuthCode           string `json:"AuthCode"`
+	TransactionStatus  string `json:"TransactionStatus"`
+	ErrDesc            string `json:"ErrDesc"`
+	Signature          string `json:"Signature"`
+	IssuerBank         string `json:"IssuerBank"`
+	PaymentDate        string `json:"PaymentDate"`
+	Xfield1            string `json:"Xfield1"`
+	DCCConversionRate  string `json:"DCCConversionRate"`
+	OriginalAmount     string `json:"OriginalAmount"`
+	OriginalCurrency   string `json:"OriginalCurrency"`
+	SettlementAmount   string `json:"SettlementAmount"`
+	SettlementCurrency string `json:"SettlementCurrency"`
+	Binbank            string `json:"Binbank"`
+}
+
+type NotificationResponse struct {
+	Code    string `json:"Code"`
+	Message struct {
+		English    string `json:"English"`
+		Indonesian string `json:"Indonesian"`
+	} `json:"Message"`
 }
